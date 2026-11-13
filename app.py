@@ -32,3 +32,8 @@ def average_temp(devices):
 @app.get("/devices")
 def get_devices():
     return readings
+
+
+@app.get("/devices/hottest")
+def get_hottest():
+    return hottest(readings)
