@@ -27,3 +27,8 @@ def average_temp(devices):
     for device in devices:
         total += device["temp"]
     return total / len(devices)
+
+
+@app.get("/devices")
+def get_devices():
+    return readings
