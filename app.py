@@ -48,3 +48,15 @@ def get_online_devices():
             online_devices.append(device)
 
     return online_devices
+
+
+@app.get("/devices/{name}")
+def get_device(name: str):
+    for device in readings:
+        if device["name"] == name:
+            return device
+
+    raise HTTPException(
+        status_code=404,
+        detail="No device called " + name
+    )
