@@ -60,3 +60,12 @@ def get_device(name: str):
         status_code=404,
         detail="No device called " + name
     )
+
+
+@app.get("/stats")
+def get_stats():
+    average = average_temp(readings)
+
+    return {
+        "average_temperature": round(average, 2)
+    }
