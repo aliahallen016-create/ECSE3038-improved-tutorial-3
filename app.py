@@ -26,5 +26,4 @@ def average_temp(devices):
 
     for device in devices:
         total += device["temp"]
-
     return total / len(devices)
